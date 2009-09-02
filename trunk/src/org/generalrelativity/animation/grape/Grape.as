@@ -1,3 +1,28 @@
+/*
+Copyright (c) 2009 Drew Cummins
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+*/
+
 package org.generalrelativity.animation.grape
 {
 	import flash.display.DisplayObject;
@@ -9,8 +34,8 @@ package org.generalrelativity.animation.grape
 	import org.generalrelativity.animation.grape.binding.Binding2D;
 	import org.generalrelativity.animation.grape.binding.PropertyBinding;
 	import org.generalrelativity.animation.grape.curve.Curve;
-	import org.generalrelativity.animation.grape.path.Path;
 	import org.generalrelativity.animation.grape.path.Path1D;
+	import org.generalrelativity.animation.grape.path.Path2D;
 
 	[Event(name="tick", type="Grape")]
 
@@ -66,7 +91,7 @@ package org.generalrelativity.animation.grape
 			
 		}
 		
-		public function create2DAnimation( view:DisplayObject, path:Path, duration:uint, start:int, curve:Curve = null, loop:Boolean = false, reverse:Boolean = false, reverseOnLoop:Boolean = false, autoAdd:Boolean = true ) : Animation
+		public function create2DAnimation( view:DisplayObject, path:Path2D, duration:uint, start:int = -1, curve:Curve = null, loop:Boolean = false, reverse:Boolean = false, reverseOnLoop:Boolean = false, autoAdd:Boolean = true ) : Animation
 		{
 			
 			if( start < 0 ) start = getTimer();
@@ -79,7 +104,7 @@ package org.generalrelativity.animation.grape
 			
 		}
 		
-		public function createPropertyAnimation( object:Object, properties:Vector.<String>, targets:Vector.<Number>, duration:uint, start:int, curve:Curve = null, loop:Boolean = false, reverse:Boolean = false, reverseOnLoop:Boolean = false, autoAdd:Boolean = true ) : Animation
+		public function createPropertyAnimation( object:Object, properties:Vector.<String>, targets:Vector.<Number>, duration:uint, start:int = -1, curve:Curve = null, loop:Boolean = false, reverse:Boolean = false, reverseOnLoop:Boolean = false, autoAdd:Boolean = true ) : Animation
 		{
 			
 			if( start < 0 ) start = getTimer();
